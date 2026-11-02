@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { QrCode, ScanLine, Sparkles, Sun, Moon, Laptop, ShieldCheck } from "lucide-react";
+import { QrCode, ScanLine, Sparkles, Sun, Moon, Laptop } from "lucide-react";
 import { getStoredTheme, setStoredTheme, Theme } from "@/utils/storage";
 
 interface NavbarProps {
@@ -62,16 +62,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
             <QrCode className="w-5 h-5" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">
-                QR Studio
-              </span>
-              <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60">
-                <ShieldCheck className="w-3 h-3" />
-                100% Client-Side
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden xs:block">
+            <h1 className="font-bold text-lg tracking-tight text-slate-900 dark:text-white leading-none">
+              QR Studio
+            </h1>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 hidden xs:block">
               Free Scanner & Generator
             </p>
           </div>

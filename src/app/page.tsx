@@ -34,7 +34,7 @@ export default function Home() {
           </h1>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
             {activeTab === "scan"
-              ? "Instantly decode QR codes with your device camera or uploaded image. 100% private and on-device."
+              ? "Instantly decode QR codes with your device camera or uploaded image."
               : "Generate high-resolution PNG & SVG vector QR codes for websites, Wi-Fi networks, emails, and phone numbers."}
           </p>
         </div>

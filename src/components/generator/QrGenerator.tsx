@@ -652,7 +652,7 @@ export const QrGenerator: React.FC = () => {
             )}
 
             <p className="mt-3 text-[11px] text-slate-400">
-              {size} × {size} px • Level {ecLevel} • Client-rendered
+              {size} × {size} px • Level {ecLevel}
             </p>
 
             {/* Action Buttons */}

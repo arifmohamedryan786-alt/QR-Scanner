@@ -238,7 +238,7 @@ export const CameraScanner: React.FC<CameraScannerProps> = ({ onScanSuccess, act
             </div>
             <h3 className="text-base font-semibold text-white mb-1">Live Camera Scanner</h3>
             <p className="text-xs text-slate-400 max-w-xs mb-6">
-              Instant on-device QR scanning. Point your camera at any QR code to scan.
+              Point your camera at any QR code to scan.
             </p>
             <button
               onClick={() => startScanner(selectedCameraId || undefined)}

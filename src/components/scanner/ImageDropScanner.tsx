@@ -156,7 +156,7 @@ export const ImageDropScanner: React.FC<ImageDropScannerProps> = ({ onScanSucces
                 : "Drop your QR image here, or browse"}
             </p>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Supports PNG, JPG, WebP, SVG, GIF (Processed 100% locally)
+              Supports PNG, JPG, WebP, SVG, and GIF
             </p>
           </div>
         </div>
