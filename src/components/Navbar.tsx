@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { QrCode, ScanLine, Sparkles, Sun, Moon, Laptop } from "lucide-react";
+import { QrCode, ScanLine, Sparkles, Sun, Moon } from "lucide-react";
 import { getStoredTheme, setStoredTheme, Theme } from "@/utils/storage";
 
 interface NavbarProps {
@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -18,36 +18,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
     const saved = getStoredTheme();
     setTheme(saved);
     applyTheme(saved);
-
-    // Listen to OS theme changes if on system mode
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = () => {
-      if (getStoredTheme() === "system") {
-        applyTheme("system");
-      }
-    };
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const applyTheme = (t: Theme) => {
     const root = document.documentElement;
     if (t === "dark") {
       root.classList.add("dark");
-    } else if (t === "light") {
-      root.classList.remove("dark");
     } else {
-      // System
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.add("dark");
-      } else {
-        root.classList.remove("dark");
-      }
+      root.classList.remove("dark");
     }
   };
 
-  const cycleTheme = () => {
-    const next: Theme = theme === "system" ? "dark" : theme === "dark" ? "light" : "system";
+  const toggleTheme = () => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
     setStoredTheme(next);
     applyTheme(next);
@@ -110,17 +93,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
         <div className="flex items-center justify-end gap-2">
           {mounted && (
             <button
-              onClick={cycleTheme}
-              title={`Current theme: ${theme}. Click to change.`}
-              aria-label={`Toggle theme (currently ${theme})`}
+              onClick={toggleTheme}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               {theme === "dark" ? (
                 <Moon className="w-4 h-4 text-indigo-400" />
-              ) : theme === "light" ? (
-                <Sun className="w-4 h-4 text-amber-500" />
               ) : (
-                <Laptop className="w-4 h-4 text-slate-500" />
+                <Sun className="w-4 h-4 text-amber-500" />
               )}
             </button>
           )}

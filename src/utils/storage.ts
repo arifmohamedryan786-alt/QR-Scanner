@@ -86,19 +86,22 @@ export function clearStoredHistory(): void {
   }
 }
 
-export type Theme = "light" | "dark" | "system";
+export type Theme = "light" | "dark";
 
 export function getStoredTheme(): Theme {
-  if (typeof window === "undefined") return "system";
+  if (typeof window === "undefined") return "light";
   try {
     const val = localStorage.getItem(THEME_KEY);
-    if (val === "light" || val === "dark" || val === "system") {
+    if (val === "light" || val === "dark") {
       return val;
+    }
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
     }
   } catch (e) {
     console.warn("Could not read theme from localStorage", e);
   }
-  return "system";
+  return "light";
 }
 
 export function setStoredTheme(theme: Theme): void {
