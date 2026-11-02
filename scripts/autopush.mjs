@@ -88,3 +88,4 @@ for (const dirName of WATCH_DIRS) {
 }
 
 log("Watcher is active. Changes in src/ and public/ will auto-push 20s after the last edit.");
+

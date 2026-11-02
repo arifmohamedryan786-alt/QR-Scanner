@@ -7,3 +7,4 @@ After you finish ANY code change:
 4. Run `git push origin main`.
 
 Never leave finished changes uncommitted. Never force-push. Never commit .env files or secrets. If the build fails, do not push; fix it first. If the push is rejected, run `git pull --rebase origin main`, then push again.
+
