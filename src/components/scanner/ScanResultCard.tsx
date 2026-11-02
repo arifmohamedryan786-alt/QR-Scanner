@@ -252,3 +252,4 @@ export const ScanResultCard: React.FC<ScanResultCardProps> = ({ result, onScanAg
     </div>
   );
 };
+

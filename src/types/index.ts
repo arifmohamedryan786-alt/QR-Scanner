@@ -65,3 +65,4 @@ export interface GeneratorSettings {
   bgColor: string;
   errorCorrectionLevel: ErrorCorrectionLevel;
 }
+

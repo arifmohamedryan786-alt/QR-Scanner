@@ -109,3 +109,4 @@ export function setStoredTheme(theme: Theme): void {
     console.warn("Could not save theme to localStorage", e);
   }
 }
+

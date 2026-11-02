@@ -35,7 +35,8 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits & Links */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
           <p>© {new Date().getFullYear()} QR Studio. Built with Next.js, Tailwind CSS & TypeScript.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <span>Built by Arif Mohamed</span>
             <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono">
               Zero telemetry • Zero backend
             </span>
@@ -45,3 +46,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+

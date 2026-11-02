@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ship": "npm run build && git add -A && git commit -m \"update\" && git push origin main",
+    "autopush": "node scripts/autopush.mjs"
   },
   "dependencies": {
     "html5-qrcode": "^2.3.8",

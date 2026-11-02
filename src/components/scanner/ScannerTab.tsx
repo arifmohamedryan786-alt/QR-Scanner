@@ -129,3 +129,4 @@ export const ScannerTab: React.FC<ScannerTabProps> = ({ active }) => {
     </div>
   );
 };
+

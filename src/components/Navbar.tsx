@@ -133,3 +133,4 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
     </header>
   );
 };
+

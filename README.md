@@ -65,6 +65,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### 4. Build, Ship & Auto-Push Commands
+- **`npm run ship`**: Builds the project, stages all changes, commits, and pushes directly to `main` so Vercel redeploys immediately.
+- **`npm run autopush`**: Background watcher script that watches `src/` and `public/`, debounces for 20 seconds after the last edit, and automatically commits and pushes to `main`.
+
 > **Note on Camera Testing**: Web browsers only grant camera access in a **secure context** (`https://` or `localhost`). When testing on `localhost:3000`, the camera will work directly on your development machine. To test camera scanning on a physical smartphone during local development, use an HTTPS tunnel (e.g., `npx localtunnel --port 3000` or Cloudflare Tunnel) or deploy to Vercel.
 
 ---
@@ -110,3 +114,4 @@ When testing on your phone or desktop at the deployed HTTPS URL:
 
 ## 📄 License
 MIT
+

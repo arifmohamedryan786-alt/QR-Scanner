@@ -180,3 +180,4 @@ export const ImageDropScanner: React.FC<ImageDropScannerProps> = ({ onScanSucces
     </div>
   );
 };
+

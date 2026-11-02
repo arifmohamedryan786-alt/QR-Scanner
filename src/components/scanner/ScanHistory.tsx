@@ -146,3 +146,4 @@ export const ScanHistory: React.FC<ScanHistoryProps> = ({
     </div>
   );
 };
+
